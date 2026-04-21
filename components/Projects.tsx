@@ -172,14 +172,14 @@ const MORE: {
     href: "https://github.com/Aksaddd/neighborhood-solar-experts",
   },
   {
-    name: "rattyrunclub",
-    blurb: "Run-club microsite with event and roster views.",
-    href: "https://github.com/Aksaddd/rattyrunclub",
-  },
-  {
     name: "Hibachi_Street_Bites",
     blurb: "Food-truck / hibachi concept landing site.",
     href: "https://github.com/Aksaddd/Hibachi_Street_Bites",
+  },
+  {
+    name: "Akza-BBQ",
+    blurb: "BBQ brand landing with menu and location.",
+    href: "https://github.com/Aksaddd/Akza-BBQ",
   },
 ];
 
