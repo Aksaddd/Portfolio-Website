@@ -1,3 +1,5 @@
+import Preview from "./Preview";
+
 type Project = {
   index: string;
   title: string;
@@ -7,6 +9,7 @@ type Project = {
   tech: string[];
   repo: string;
   live?: string;
+  image?: string;
 };
 
 const FEATURED: Project[] = [
@@ -33,6 +36,8 @@ const FEATURED: Project[] = [
       "Gemini",
     ],
     repo: "https://github.com/Aksaddd/Quant-Review",
+    // live: "https://quant-review.vercel.app", // <- fill in once deployed
+    // image: "/previews/quant-review.png",     // <- or drop a static screenshot here
   },
   {
     index: "02",
@@ -56,79 +61,96 @@ const FEATURED: Project[] = [
       "Vercel",
     ],
     repo: "https://github.com/Aksaddd/enso-no-sato",
+    // live: "https://enso-no-sato.vercel.app",
+    // image: "/previews/enso-no-sato.png",
   },
 ];
 
 function ProjectCard({ p }: { p: Project }) {
   return (
-    <article className="group relative border border-moss-800/70 bg-moss-900/20 hover:bg-moss-900/40 transition-colors rounded-xl p-8 md:p-12 overflow-hidden">
+    <article className="group relative border border-moss-800/70 bg-moss-900/20 hover:bg-moss-900/40 transition-colors rounded-xl p-6 md:p-10 overflow-hidden">
       <div className="absolute -top-10 -right-8 select-none pointer-events-none font-serif text-[9rem] md:text-[12rem] leading-none text-moss-800/40 group-hover:text-moss-700/50 transition-colors">
         {p.index}
       </div>
 
-      <div className="relative">
-        <p className="font-mono text-[0.7rem] tracking-[0.3em] uppercase text-moss-300 mb-3">
-          Featured Work · {p.index}
-        </p>
-        <h3 className="font-serif text-3xl md:text-5xl text-ink mb-2">
-          {p.title}
-        </h3>
-        <p className="text-ink-muted italic mb-6 md:mb-8">{p.subtitle}</p>
+      <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+        {/* Preview */}
+        <div className="lg:col-span-7 order-1">
+          <Preview
+            live={p.live}
+            image={p.image}
+            title={p.title}
+          />
+        </div>
 
-        <p className="text-ink/90 leading-relaxed md:text-lg max-w-2xl mb-6">
-          {p.blurb}
-        </p>
+        {/* Copy */}
+        <div className="lg:col-span-5 order-2">
+          <p className="font-mono text-[0.7rem] tracking-[0.3em] uppercase text-moss-300 mb-3">
+            Featured Work · {p.index}
+          </p>
+          <h3 className="font-serif text-3xl md:text-4xl text-ink mb-2 leading-tight">
+            {p.title}
+          </h3>
+          <p className="text-ink-muted italic mb-5">{p.subtitle}</p>
 
-        <ul className="space-y-2 mb-8 max-w-2xl">
-          {p.bullets.map((b) => (
-            <li
-              key={b}
-              className="text-sm md:text-base text-ink-muted leading-relaxed pl-5 relative before:absolute before:left-0 before:top-[0.65em] before:w-2 before:h-px before:bg-moss-300"
-            >
-              {b}
-            </li>
-          ))}
-        </ul>
+          <p className="text-ink/90 leading-relaxed mb-5">{p.blurb}</p>
 
-        <ul className="flex flex-wrap gap-2 mb-8">
-          {p.tech.map((t) => (
-            <li
-              key={t}
-              className="text-[0.7rem] md:text-xs tracking-wide font-mono text-moss-200 border border-moss-700/60 rounded-full px-2.5 py-1"
-            >
-              {t}
-            </li>
-          ))}
-        </ul>
+          <ul className="space-y-2 mb-6">
+            {p.bullets.map((b) => (
+              <li
+                key={b}
+                className="text-sm text-ink-muted leading-relaxed pl-5 relative before:absolute before:left-0 before:top-[0.65em] before:w-2 before:h-px before:bg-moss-300"
+              >
+                {b}
+              </li>
+            ))}
+          </ul>
 
-        <div className="flex flex-wrap gap-5 text-sm">
-          <a
-            href={p.repo}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="inline-flex items-center gap-2 text-ink hover:text-moss-200 transition-colors tracking-wide"
-          >
-            <span>View repository</span>
-            <span aria-hidden>→</span>
-          </a>
-          {p.live && (
+          <ul className="flex flex-wrap gap-2 mb-6">
+            {p.tech.map((t) => (
+              <li
+                key={t}
+                className="text-[0.7rem] tracking-wide font-mono text-moss-200 border border-moss-700/60 rounded-full px-2.5 py-1"
+              >
+                {t}
+              </li>
+            ))}
+          </ul>
+
+          <div className="flex flex-wrap gap-5 text-sm">
             <a
-              href={p.live}
+              href={p.repo}
               target="_blank"
               rel="noreferrer noopener"
-              className="inline-flex items-center gap-2 text-ink-muted hover:text-ink transition-colors tracking-wide"
+              className="inline-flex items-center gap-2 text-ink hover:text-moss-200 transition-colors tracking-wide"
             >
-              <span>Live site</span>
-              <span aria-hidden>↗</span>
+              <span>View repository</span>
+              <span aria-hidden>→</span>
             </a>
-          )}
+            {p.live && (
+              <a
+                href={p.live}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="inline-flex items-center gap-2 text-ink-muted hover:text-ink transition-colors tracking-wide"
+              >
+                <span>Live site</span>
+                <span aria-hidden>↗</span>
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </article>
   );
 }
 
-const MORE: { name: string; blurb: string; href: string }[] = [
+const MORE: {
+  name: string;
+  blurb: string;
+  href: string;
+  live?: string;
+}[] = [
   {
     name: "majestic-barbershop",
     blurb: "Modern barbershop site with booking-ready layout.",
