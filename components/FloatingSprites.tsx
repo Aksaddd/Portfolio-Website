@@ -20,32 +20,29 @@ export default function FloatingSprites() {
       aria-hidden
       className="pointer-events-none absolute inset-0 overflow-hidden z-0"
     >
-      {/* Zero — dashes left to right across the bottom */}
-      <div className="absolute bottom-6 left-0 w-full h-16 md:h-20">
-        <img
-          src={ZERO_SRC}
-          alt=""
-          className="absolute bottom-0 h-16 md:h-20 w-auto pixelated opacity-90 animate-dash-right"
-          style={{ imageRendering: "pixelated" }}
-          onError={(e) => {
-            // Hide silently if the file isn't there yet
-            (e.currentTarget as HTMLImageElement).style.display = "none";
-          }}
-        />
-      </div>
+      {/* Zero — anchored bottom-left, plays whatever the GIF does in place
+          (recommend a "Z-saber slash" or idle saber-stance sprite) */}
+      <img
+        src={ZERO_SRC}
+        alt=""
+        className="absolute bottom-6 left-4 md:left-10 h-24 md:h-32 w-auto pixelated opacity-90"
+        style={{ imageRendering: "pixelated" }}
+        onError={(e) => {
+          (e.currentTarget as HTMLImageElement).style.display = "none";
+        }}
+      />
 
-      {/* Blaziken — strolls right to left, slightly higher, slower */}
-      <div className="absolute bottom-10 left-0 w-full h-20 md:h-24">
-        <img
-          src={BLAZIKEN_SRC}
-          alt=""
-          className="absolute bottom-0 h-20 md:h-24 w-auto pixelated opacity-90 animate-stroll-left"
-          style={{ imageRendering: "pixelated" }}
-          onError={(e) => {
-            (e.currentTarget as HTMLImageElement).style.display = "none";
-          }}
-        />
-      </div>
+      {/* Blaziken — anchored bottom-right, mirrored to face inward toward Zero.
+          Showdown's ani sprites are an idle fighting stance — that's the loop. */}
+      <img
+        src={BLAZIKEN_SRC}
+        alt=""
+        className="absolute bottom-6 right-4 md:right-10 h-28 md:h-36 w-auto pixelated opacity-90"
+        style={{ imageRendering: "pixelated", transform: "scaleX(-1)" }}
+        onError={(e) => {
+          (e.currentTarget as HTMLImageElement).style.display = "none";
+        }}
+      />
     </div>
   );
 }

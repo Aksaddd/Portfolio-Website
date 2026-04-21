@@ -37,8 +37,6 @@ const config: Config = {
         "fade-in-slow": "fadeIn 2.4s ease-out forwards",
         "rise": "rise 1.2s cubic-bezier(.2,.7,.2,1) forwards",
         "drift": "drift 24s linear infinite",
-        "dash-right": "dashRight 14s linear infinite",
-        "stroll-left": "strollLeft 22s linear infinite",
       },
       keyframes: {
         fadeIn: {
@@ -52,14 +50,6 @@ const config: Config = {
         drift: {
           "0%": { transform: "translateY(-10%)" },
           "100%": { transform: "translateY(10%)" },
-        },
-        dashRight: {
-          "0%": { transform: "translateX(-15%)" },
-          "100%": { transform: "translateX(115vw)" },
-        },
-        strollLeft: {
-          "0%": { transform: "translateX(115vw) scaleX(-1)" },
-          "100%": { transform: "translateX(-15%) scaleX(-1)" },
         },
       },
     },
