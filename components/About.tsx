@@ -112,13 +112,22 @@ export default function About() {
               >
                 View on op.gg <span aria-hidden>↗</span>
               </a>
-              <div className="pt-3 border-t border-moss-800/60">
+              <div className="pt-3 border-t border-moss-800/60 mb-4">
                 <p className="font-mono text-[0.65rem] tracking-[0.25em] uppercase text-moss-300 mb-1">
                   Pokémon Showdown
                 </p>
                 <p className="text-sm text-ink-muted leading-relaxed">
                   Competitive teambuilding and OU/Ubers ladder grinding —
                   reading the meta, predicting switches, punishing reads.
+                </p>
+              </div>
+              <div className="pt-3 border-t border-moss-800/60">
+                <p className="font-mono text-[0.65rem] tracking-[0.25em] uppercase text-moss-300 mb-1">
+                  Currently obsessed
+                </p>
+                <p className="text-sm text-ink-muted leading-relaxed">
+                  Mega Man Zero series — bite-sized stages, ruthless
+                  difficulty, the cleanest 2D action design ever shipped.
                 </p>
               </div>
             </div>
