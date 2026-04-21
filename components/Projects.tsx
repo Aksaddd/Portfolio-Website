@@ -36,8 +36,7 @@ const FEATURED: Project[] = [
       "Gemini",
     ],
     repo: "https://github.com/Aksaddd/Quant-Review",
-    // live: "https://quant-review.vercel.app", // <- fill in once deployed
-    // image: "/previews/quant-review.png",     // <- or drop a static screenshot here
+    live: "https://quant-review.vercel.app/",
   },
   {
     index: "02",
@@ -61,8 +60,7 @@ const FEATURED: Project[] = [
       "Vercel",
     ],
     repo: "https://github.com/Aksaddd/enso-no-sato",
-    // live: "https://enso-no-sato.vercel.app",
-    // image: "/previews/enso-no-sato.png",
+    live: "https://www.ensonosato.com/",
   },
 ];
 
@@ -157,19 +155,9 @@ const MORE: {
     href: "https://github.com/Aksaddd/majestic-barbershop",
   },
   {
-    name: "no1-halal-kitchen",
-    blurb: "Restaurant site with menu and location presence.",
-    href: "https://github.com/Aksaddd/no1-halal-kitchen",
-  },
-  {
     name: "muebleria-jenny-yax",
     blurb: "TypeScript storefront for a furniture business.",
     href: "https://github.com/Aksaddd/muebleria-jenny-yax",
-  },
-  {
-    name: "neighborhood-solar-experts",
-    blurb: "Lead-gen landing for a residential solar company.",
-    href: "https://github.com/Aksaddd/neighborhood-solar-experts",
   },
   {
     name: "Hibachi_Street_Bites",
