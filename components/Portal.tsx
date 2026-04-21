@@ -11,6 +11,33 @@ type PortalSite = {
 
 const SITES: PortalSite[] = [
   {
+    name: "No 1 Halal Kitchen",
+    blurb:
+      "Restaurant website for a halal kitchen — menu, hours, location, and a streamlined ordering-ready layout. Custom domain on Vercel.",
+    live: "https://www.no1halalkitchen.com/",
+    repo: "https://github.com/Aksaddd/no1-halal-kitchen",
+    host: "Vercel",
+    tags: ["HTML/CSS", "Small-business", "Custom Domain"],
+  },
+  {
+    name: "Neighborhood Solar Experts",
+    blurb:
+      "Lead-generation landing for a residential solar company — hero, pitch sections, and a contact flow tuned for conversion. Shipped on Render with a .energy domain.",
+    live: "https://neighborhoodsolarexpert.energy/",
+    repo: "https://github.com/Aksaddd/neighborhood-solar-experts",
+    host: "Render",
+    tags: ["JavaScript", "Lead-gen", "Custom Domain"],
+  },
+  {
+    name: "Bodhi Fitness",
+    blurb:
+      "Landing page for a neighborhood gym — class schedule, membership pitch, and a contact flow optimized for mobile walk-ins.",
+    live: "https://bodhi-fitness-website.vercel.app/",
+    repo: "https://github.com/Aksaddd/bodhi-fitness-website",
+    host: "Vercel",
+    tags: ["HTML/CSS", "Small-business"],
+  },
+  {
     name: "Ratty Run Club",
     blurb:
       "Community run-club microsite with event schedule, roster, and social links. Built light and fast so it loads on the trail.",
@@ -18,15 +45,6 @@ const SITES: PortalSite[] = [
     repo: "https://github.com/Aksaddd/rattyrunclub",
     host: "GitHub Pages",
     tags: ["TypeScript", "Static", "Community"],
-  },
-  {
-    name: "Bodhi Fitness",
-    blurb:
-      "Landing page for a neighborhood gym — class schedule, membership pitch, and a contact flow optimized for mobile walk-ins.",
-    live: "https://aksaddd.github.io/bodhi-fitness-website/",
-    repo: "https://github.com/Aksaddd/bodhi-fitness-website",
-    host: "GitHub Pages",
-    tags: ["HTML/CSS", "Static", "Small-business"],
   },
 ];
 
@@ -99,16 +117,17 @@ export default function Portal() {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
           <div className="max-w-2xl">
             <h2 className="font-serif text-3xl md:text-5xl text-ink leading-[1.1]">
-              Small sites, shipped &amp;{" "}
-              <span className="italic text-moss-200">online</span>.
+              Sites in the wild,{" "}
+              <span className="italic text-moss-200">live now</span>.
             </h2>
             <p className="mt-4 text-ink-muted text-sm md:text-base leading-relaxed">
-              A rotating door to sites running on free tiers — GitHub Pages
-              and friends. Click any card to open the live version.
+              Client and community sites currently in production — across
+              Vercel, Render, and GitHub Pages. Click any card to open the
+              real thing.
             </p>
           </div>
           <p className="font-mono text-[0.7rem] tracking-[0.25em] uppercase text-moss-300/80">
-            Zero hosting cost · static deploys
+            {SITES.length} sites · live preview
           </p>
         </div>
 
