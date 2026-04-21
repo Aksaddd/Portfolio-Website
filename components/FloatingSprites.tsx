@@ -2,16 +2,13 @@
 
 /* eslint-disable @next/next/no-img-element */
 
-// Animated Pokémon sprite served by Pokémon Showdown's public asset CDN.
-// This URL has been hot-link-friendly for over a decade — used by countless
-// fan sites and tooling. If it ever breaks, drop a replacement at
-// /public/sprites/blaziken.gif and change BLAZIKEN_SRC below.
-const BLAZIKEN_SRC =
-  "https://play.pokemonshowdown.com/sprites/ani/blaziken.gif";
-
-// Mega Man Zero sprite — served locally so you control which GIF appears.
-// Drop your preferred sprite at this path; until you do, the slot stays empty.
-// See the README for one-line PowerShell to grab a candidate dash GIF.
+// Both sprites are served locally so you fully control which GIFs play.
+// Drop your preferred animations at these paths. Until they exist, the
+// slots stay empty (graceful onError fallback below).
+//
+//   public/sprites/blaziken.gif  — recommend a kicking / attack loop
+//   public/sprites/zero.gif      — recommend a Z-saber slash or idle stance
+const BLAZIKEN_SRC = "/sprites/blaziken.gif";
 const ZERO_SRC = "/sprites/zero.gif";
 
 export default function FloatingSprites() {
