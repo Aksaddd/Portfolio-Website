@@ -4,6 +4,7 @@ import About from "@/components/About";
 import Stack from "@/components/Stack";
 import Projects from "@/components/Projects";
 import Portal from "@/components/Portal";
+import Interests from "@/components/Interests";
 import Contact from "@/components/Contact";
 
 export default function Page() {
@@ -15,6 +16,7 @@ export default function Page() {
       <Stack />
       <Projects />
       <Portal />
+      <Interests />
       <Contact />
     </main>
   );

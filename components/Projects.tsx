@@ -164,11 +164,6 @@ const MORE: {
     blurb: "Food-truck / hibachi concept landing site.",
     href: "https://github.com/Aksaddd/Hibachi_Street_Bites",
   },
-  {
-    name: "Akza-BBQ",
-    blurb: "BBQ brand landing with menu and location.",
-    href: "https://github.com/Aksaddd/Akza-BBQ",
-  },
 ];
 
 export default function Projects() {

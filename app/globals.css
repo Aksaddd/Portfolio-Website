@@ -68,3 +68,10 @@ body {
 
 /* Smooth anchor scrolling */
 html { scroll-behavior: smooth; }
+
+/* Crisp pixel-art rendering for sprites */
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}

@@ -46,6 +46,15 @@ const SITES: PortalSite[] = [
     host: "Vercel",
     tags: ["TypeScript", "Community", "Run Club"],
   },
+  {
+    name: "Akza BBQ",
+    blurb:
+      "Brand landing for a BBQ joint — menu, hours, and a hero that keeps people scrolling toward the call to order.",
+    live: "https://akza-bbq.vercel.app/",
+    repo: "https://github.com/Aksaddd/Akza-BBQ",
+    host: "Vercel",
+    tags: ["HTML/CSS", "Restaurant", "Small-business"],
+  },
 ];
 
 function Card({ site }: { site: PortalSite }) {
@@ -131,7 +140,7 @@ export default function Portal() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {SITES.map((s) => (
             <Card key={s.name} site={s} />
           ))}
