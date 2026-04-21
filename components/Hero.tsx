@@ -16,21 +16,21 @@ export default function Hero() {
         poster=""
       />
 
-      {/* Color grade: dark-green wash + vignette */}
+      {/* Color grade: subtle dark-green wash — keep the video visible */}
       <div
         aria-hidden
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(120% 80% at 50% 40%, rgba(5,10,7,0.15) 0%, rgba(5,10,7,0.55) 55%, rgba(5,10,7,0.92) 100%), linear-gradient(180deg, rgba(10,20,14,0.4) 0%, rgba(10,20,14,0.25) 40%, rgba(5,10,7,0.95) 100%)",
+            "radial-gradient(130% 85% at 50% 45%, rgba(5,10,7,0) 0%, rgba(5,10,7,0.08) 55%, rgba(5,10,7,0.55) 100%), linear-gradient(180deg, rgba(10,20,14,0.15) 0%, rgba(10,20,14,0.05) 40%, rgba(5,10,7,0.7) 100%)",
         }}
       />
       <div
         aria-hidden
-        className="absolute inset-0 mix-blend-multiply"
+        className="absolute inset-0 mix-blend-multiply opacity-40"
         style={{
           background:
-            "linear-gradient(180deg, rgba(26,46,35,0.45) 0%, rgba(18,32,24,0.55) 100%)",
+            "linear-gradient(180deg, rgba(26,46,35,0.2) 0%, rgba(18,32,24,0.3) 100%)",
         }}
       />
 
@@ -38,7 +38,10 @@ export default function Hero() {
       <div className="rain" aria-hidden />
 
       {/* Foreground copy */}
-      <div className="relative z-10 px-6 md:px-10 max-w-5xl text-center">
+      <div
+        className="relative z-10 px-6 md:px-10 max-w-5xl text-center"
+        style={{ textShadow: "0 2px 24px rgba(5,10,7,0.75)" }}
+      >
         <p className="uppercase tracking-[0.32em] text-xs md:text-sm text-moss-200/80 mb-6 opacity-0 animate-fade-in [animation-delay:300ms]">
           Aksad Hossain · Portfolio
         </p>
