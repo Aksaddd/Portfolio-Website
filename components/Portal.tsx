@@ -41,10 +41,10 @@ const SITES: PortalSite[] = [
     name: "Ratty Run Club",
     blurb:
       "Community run-club microsite with event schedule, roster, and social links. Built light and fast so it loads on the trail.",
-    live: "https://aksaddd.github.io/rattyrunclub/",
+    live: "https://rattyrunclub.vercel.app/",
     repo: "https://github.com/Aksaddd/rattyrunclub",
-    host: "GitHub Pages",
-    tags: ["TypeScript", "Static", "Community"],
+    host: "Vercel",
+    tags: ["TypeScript", "Community", "Run Club"],
   },
 ];
 
