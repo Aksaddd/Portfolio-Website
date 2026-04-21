@@ -41,6 +41,27 @@ public/
 3. Framework preset: **Next.js** — no env vars needed.
 4. Deploy. Vercel auto-builds on every push to `main`.
 
+> The project is configured with `output: "export"` so Next produces a
+> static bundle. Vercel will still pick it up correctly; this setup is
+> what lets Surge and other static hosts serve the site too.
+
+## Deploying to Surge
+
+Surge hosts static files. We produce them with `next build`, which writes
+to `./out`.
+
+```bash
+# one-time: install the CLI globally
+npm install -g surge
+
+# build + deploy
+npm run build
+surge ./out your-subdomain.surge.sh
+```
+
+First run asks for email + password (creates the account). Subsequent
+runs just push. To redeploy after changes: `npm run build && surge ./out`.
+
 > Note: `public/hero.mp4` is ~19 MB. For production, consider hosting the
 > video on a CDN (Cloudinary, Mux, or Vercel Blob) and swapping `/hero.mp4`
 > for the CDN URL if you want faster first paint.

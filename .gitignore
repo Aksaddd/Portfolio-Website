@@ -10,6 +10,9 @@
 /.next/
 /out/
 
+# surge
+CNAME
+
 # production
 /build
 
