@@ -32,12 +32,12 @@ export default function FloatingSprites() {
         }}
       />
 
-      {/* Blaziken — anchored bottom-right, mirrored to face inward toward Zero */}
+      {/* Blaziken — anchored bottom-right, natural orientation faces Zero */}
       <img
         src={BLAZIKEN_SRC}
         alt=""
         className="absolute bottom-6 right-4 md:right-10 h-28 md:h-36 w-auto pixelated opacity-95"
-        style={{ imageRendering: "pixelated", transform: "scaleX(-1)" }}
+        style={{ imageRendering: "pixelated" }}
         onError={(e) => {
           (e.currentTarget as HTMLImageElement).style.display = "none";
         }}

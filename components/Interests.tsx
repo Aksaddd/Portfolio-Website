@@ -43,8 +43,18 @@ export default function Interests() {
       id="interests"
       className="section relative py-24 md:py-32 px-6 md:px-10 overflow-hidden"
     >
-      {/* Floating sprites — sit behind cards but above background */}
-      <FloatingSprites />
+      {/* Sprite layer — constrained horizontally to the content max-width
+          so the sprites never sit in the dark page gutter on wide viewports.
+          Spans full section height so bottom anchoring still sits in the
+          bottom padding area, below the cards. */}
+      <div
+        aria-hidden
+        className="absolute inset-y-0 left-0 right-0 pointer-events-none z-0 flex justify-center px-6 md:px-10"
+      >
+        <div className="relative w-full max-w-6xl">
+          <FloatingSprites />
+        </div>
+      </div>
 
       <div className="mx-auto max-w-6xl relative z-10">
         <div className="flex items-center gap-4 mb-10">
